@@ -236,7 +236,7 @@ See `docs/references.md` (to be converted to the required syntax). Works cited i
 
 ## Appendix
 
-- **A. Demo screenshots:** `docs/screenshots/demo_supported.png`, `docs/screenshots/demo_tricky.png`, `docs/screenshots/demo_oos.png`, `docs/screenshots/demo_new_card.png`.
+- **A. Demo screenshots:** `docs/screenshots/demo_supported.png`, `docs/screenshots/demo_tricky.png`, `docs/screenshots/demo_oos.png`, `docs/screenshots/demo_new_card.png`, `docs/screenshots/demo_m4.png` (M4 selected).
 - **B. Example predictions (T5):** `results/example_predictions.csv` (5 correct, 5 wrong, 5 OOS test queries with M3's output and gate decision).
 - **C. Demo example check:** `results/demo_examples_check.csv` (all six demo examples, every gated model, at each model's tuned τ).
 - **D. Initial 3-epoch DistilBERT run:** `results/m4_3epoch_summary.json` and other `results/m4_3epoch_*` files.

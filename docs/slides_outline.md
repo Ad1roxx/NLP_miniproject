@@ -93,7 +93,7 @@ Every number is from `results/`. Figures are 200-dpi PNGs, ready to paste.
 ### 13. Live demo
 - `streamlit run app/streamlit_app.py`, default model M3 (best validation balanced score 0.9101), τ = 0.58
 - Run: "How do I change my PIN?" (accepted, change_pin), "How long does a card delivery take?" (confident misroute), "Book me a flight to Delhi" (rejected, 0.2607), "my new card still hasn't shown up" (right intent, card_arrival, but confidence 0.4006 < τ, so sent to a human: a false reject)
-- Backup screenshots: `docs/screenshots/demo_supported.png`, `demo_tricky.png`, `demo_oos.png`, `demo_new_card.png`; steps in `docs/demo_script.md`; checks in `results/demo_examples_check.csv`
+- Backup screenshots: `docs/screenshots/demo_supported.png`, `demo_tricky.png`, `demo_oos.png`, `demo_new_card.png`, `demo_m4.png` (M4 selected); steps in `docs/demo_script.md`; checks in `results/demo_examples_check.csv`
 - **Say:** "Watch the top-3 bars. When no intent is clearly ahead, the query goes to a human, even when the guess was right."
 
 ### 14. Inferences and limitations

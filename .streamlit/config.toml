@@ -1,12 +1,18 @@
 [theme]
 base = "light"
-primaryColor = "#2a78d6"
-backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#f0f2f6"
-textColor = "#1f2933"
+primaryColor = "#1f3a5f"
+backgroundColor = "#f6f5f1"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#172131"
+font = "sans-serif"
 
 [server]
 headless = true
+# no file watcher: stops the noisy torchvision tracebacks from scanning transformers (restart after code edits)
+fileWatcherType = "none"
+
+[client]
+toolbarMode = "viewer"
 
 [browser]
 gatherUsageStats = false
