@@ -9,6 +9,7 @@ python -m venv .venv
 pip install torch --index-url https://download.pytorch.org/whl/cu126   # CUDA build; use plain `pip install torch` on CPU-only machines
 pip install -r requirements.txt
 ```
+.venv\Scripts\python -m streamlit run app/streamlit_app.py
 
 ## Run order
 ```

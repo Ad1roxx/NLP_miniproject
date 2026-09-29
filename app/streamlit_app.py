@@ -16,6 +16,7 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # make config / src importable
 import config
 from src import predict
+from src.utils import load_json
 import ui
 
 st.set_page_config(page_title="BankBot Router", layout="wide")
@@ -51,6 +52,59 @@ def short_name(key):
     return config.MODEL_NAMES[key].replace(" ", " · ", 1)
 
 
+@st.cache_data
+def read_csv(name):
+    path = config.RESULTS / name
+    return pd.read_csv(path) if path.exists() else None
+
+
+def model_summary(key):
+    """One line of test-set facts for the selected model, read from results/ (nothing computed here)."""
+    parts = []
+    res, oos, cost = read_csv("results_table.csv"), read_csv("oos_results.csv"), read_csv("cost_table.csv")
+    if res is not None and key in set(res["model"]):
+        parts.append(f"Test macro-F1 <b>{res.set_index('model').loc[key, 'macro_f1']:.4f}</b>")
+    if oos is not None and key in set(oos["model"]):
+        parts.append(f"OOS recall <b>{oos.set_index('model').loc[key, 'oos_recall']:.3f}</b>")
+    if cost is not None and key in set(cost["model"]):
+        parts.append(f"<b>{cost.set_index('model').loc[key, 'median_latency_ms_cpu_batch1']:.2f} ms</b>/query on CPU")
+    return " · ".join(parts)
+
+
+@st.dialog("Supported intents", width="large")
+def intents_dialog(key, predicted):
+    """All 77 intents with training-set size and the selected model's per-intent test scores."""
+    stats = load_json(config.RESULTS / "dataset_stats.json") if (config.RESULTS / "dataset_stats.json").exists() else {}
+    train_counts = stats.get("banking77", {}).get("train_per_class_counts", {})
+    pc = read_csv(f"per_class_f1_{key}.csv")
+    table = pd.DataFrame({"label": predict.LABELS})
+    table["Intent"] = table["label"].map(predict.readable)
+    table["Training examples"] = table["label"].map(train_counts)
+    table = table.sort_values("Intent", key=lambda s: s.str.lower())
+    if pc is not None:
+        table = table.merge(pc[["label", "f1", "precision", "recall"]], on="label", how="left") \
+                     .rename(columns={"f1": "Test F1", "precision": "Precision", "recall": "Recall"})
+    st.html(f'<div class="bb-small">The router can send a message to any of these <b>{len(table)}</b> BANKING77 '
+            f'intents; anything else should go to a human agent. Scores are for <b>{short_name(key)}</b> on the '
+            'official test set (40 queries per intent); training counts are from the official training file.</div>')
+    if predicted:
+        row = table[table["label"] == predicted]
+        if len(row) and "Test F1" in row:
+            st.html(f'<div class="bb-small" style="margin-top:6px">Current prediction: <b>{predict.readable(predicted)}</b>'
+                    f' · test F1 {row["Test F1"].iloc[0]:.2f} for this model.</div>')
+    search = st.text_input("Search intents", placeholder="e.g. card, transfer, top up", label_visibility="collapsed")
+    if search:
+        table = table[table["label"].str.contains(search.strip().replace(" ", "_"), case=False)
+                      | table["Intent"].str.contains(search.strip(), case=False)]
+    cols = [c for c in ["Intent", "Training examples", "Test F1", "Precision", "Recall"] if c in table]
+    st.dataframe(table[cols], hide_index=True, use_container_width=True, height=420,
+                 column_config={"Test F1": st.column_config.ProgressColumn("Test F1", min_value=0.0, max_value=1.0,
+                                                                            format="%.2f"),
+                                "Precision": st.column_config.NumberColumn(format="%.2f"),
+                                "Recall": st.column_config.NumberColumn(format="%.2f")})
+    st.caption(f"{len(table)} intents shown. Click a column header to sort, e.g. by Test F1 to see the hardest intents.")
+
+
 # ---------------- state: the message currently being analysed ----------------
 def analyse(text):
     st.session_state["query"] = text
@@ -72,7 +126,12 @@ if "query" not in st.session_state:          # first load: optional URL paramete
     st.session_state["model_key"] = m if m in models else default
 
 # ---------------- page skeleton (filled below, so controls can sit under the result) ----------------
-header_slot = st.empty()
+h_left, h_right = st.columns([3, 1.3], vertical_alignment="bottom")
+h_left.html(ui.header_title())
+status_slot = h_right.empty()
+with h_right.container(key="intents"):
+    open_intents = st.button(f"View all {len(predict.LABELS)} supported intents", use_container_width=True)
+st.html(ui.RULE)
 
 st.html('<div class="bb-eyebrow">Analyze customer message</div>')
 c_in, c_btn = st.columns([6, 1], vertical_alignment="bottom")
@@ -106,8 +165,14 @@ with c_ctrl:
             tau = None
             st.html('<div class="bb-small">LinearSVC gives no probabilities, so this model has '
                     '<b>no confidence gate</b>: every message is routed to its top intent.</div>')
+        summary = model_summary(key)
+        if summary:
+            st.html(f'<div class="bb-small" style="margin-top:6px">{summary}</div>')
 
-header_slot.html(ui.header(short_name(key)))
+status_slot.html(ui.header_status(short_name(key)))
+if open_intents:   # opened here because it needs the selected model
+    analysed = st.session_state.get("analyzed", "").strip()
+    intents_dialog(key, predict.classify(model, analysed, 0.0)["intent"] if analysed else None)
 
 # ---------------- routing decision + top predictions ----------------
 query = st.session_state.get("analyzed", "").strip()

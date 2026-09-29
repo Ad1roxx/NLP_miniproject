@@ -10,6 +10,8 @@ Open http://localhost:8501. The app loads saved models only (CPU, no training). 
 ## Layout (redesigned UI)
 One page, top to bottom: message box + **Analyze →** (Enter also works) → six example buttons → **routing decision panel** (model prediction → confidence check against τ → final routing) → top-3 predictions beside the **model controls** (model selector, τ slider) → "How the system works" and "Model results" expanders. The result stays on screen when you switch model or move τ, so you can show the routing change directly.
 
+**View all 77 supported intents** (top right) opens a searchable table of every intent the router can route to, with its number of training examples and the selected model's test F1 / precision / recall (from `results/per_class_f1_<model>.csv`); the current prediction is highlighted above the table. Useful when someone asks "what can it actually handle?". The model controls also show the selected model's test macro-F1, OOS recall and CPU latency (from `results/`).
+
 Example buttons show short labels; the text sent to the model is exactly the original example text (hover a button to see it).
 
 ## What should happen (default model M3 MiniLM + LogReg, tuned τ = 0.58)
@@ -44,6 +46,7 @@ Screenshots (redesigned UI, 1366×768, taken headlessly from the running app; M3
 - `docs/screenshots/demo_supported.png`: "I am still waiting on my card" (supported)
 - `docs/screenshots/demo_tricky.png`: "How long does a card delivery take?"
 - `docs/screenshots/demo_oos.png`: "Book me a flight to Delhi" (out of scope)
+- `docs/screenshots/demo_intents.png`: the supported-intents table (M3)
 - `docs/screenshots/demo_m4.png`: "Book me a flight to Delhi" with M4 · DistilBERT selected (94.8% but below τ = 0.97)
 - `docs/screenshots/demo_new_card.png`: "my new card still hasn't shown up" (false reject)
 

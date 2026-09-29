@@ -117,6 +117,10 @@ html, body, .stApp { font-family: var(--bb-font); }
 .st-key-analyze button { border-radius: 4px; background: var(--bb-accent); border: 1px solid var(--bb-accent);
                          color: #fff; font-weight: 600; min-height: 42px; }
 .st-key-analyze button:hover { background: #172d4a; color: #fff; }
+.st-key-intents button { border-radius: 4px; border: 1px solid var(--bb-border-strong); background: var(--bb-surface);
+                         color: var(--bb-accent); font-weight: 600; min-height: 32px; padding: 2px 10px; }
+.st-key-intents button p { font-size: 13px; }
+.st-key-intents button:hover { border-color: var(--bb-accent); }
 .st-key-controls { background: var(--bb-surface); border: 1px solid var(--bb-border); border-radius: var(--bb-radius);
                    padding: 12px 16px 6px; }
 </style>
@@ -127,16 +131,20 @@ def pct(x):
     return f"{x * 100:.1f}%"
 
 
-def header(model_name):
-    return f"""
-<div class="bb-header">
-  <div>
-    <div class="bb-brand">BANKBOT ROUTER</div>
-    <div class="bb-title">Banking support query routing</div>
-    <div class="bb-subtitle">77 banking intents · low-confidence messages go to a human agent</div>
-  </div>
-  <div class="bb-ready"><span class="bb-dot"></span>Model ready · <b>{escape(model_name)}</b></div>
+def header_title():
+    return """
+<div>
+  <div class="bb-brand">BANKBOT ROUTER</div>
+  <div class="bb-title">Banking support query routing</div>
+  <div class="bb-subtitle">77 banking intents · low-confidence messages go to a human agent</div>
 </div>"""
+
+
+def header_status(model_name):
+    return f'<div class="bb-ready" style="text-align:right"><span class="bb-dot"></span>Model ready · <b>{escape(model_name)}</b></div>'
+
+
+RULE = '<div style="border-bottom:1px solid var(--bb-border); margin: 2px 0 4px"></div>'
 
 
 def empty_result():
