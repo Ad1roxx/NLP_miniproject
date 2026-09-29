@@ -1,0 +1,16 @@
+model,case,text,true,pred,confidence,tau,gate_decision
+m3_sbert_lr,correct,I bought something but now I would like a refund. How do I do that?,request_refund,request_refund,0.9909,0.58,accepted -> request_refund
+m3_sbert_lr,correct,I would like to close my account.,terminate_account,terminate_account,0.9885,0.58,accepted -> terminate_account
+m3_sbert_lr,correct,For the first time I got a fee on my account. How do I know when you charge these fees?,card_payment_fee_charged,card_payment_fee_charged,0.9366,0.58,accepted -> card_payment_fee_charged
+m3_sbert_lr,correct,"This company is bad, please delete my account.",terminate_account,terminate_account,0.9706,0.58,accepted -> terminate_account
+m3_sbert_lr,correct,Can I change to another currency?,exchange_via_app,exchange_via_app,0.8753,0.58,accepted -> exchange_via_app
+m3_sbert_lr,wrong intent,How can I check the exchange rate applied to my transaction?,card_payment_wrong_exchange_rate,exchange_rate,0.4436,0.58,rejected -> human agent
+m3_sbert_lr,wrong intent,Can I make multiple online transactions with my virtual card?,virtual_card_not_working,disposable_card_limits,0.4446,0.58,rejected -> human agent
+m3_sbert_lr,wrong intent,Good morning. I tried to make a purchase with my credit card last night and again this morning. Both times it was declined. Can you investigate?,declined_transfer,reverted_card_payment?,0.2169,0.58,rejected -> human agent
+m3_sbert_lr,wrong intent,Why don't I have my transfer?,balance_not_updated_after_bank_transfer,failed_transfer,0.4046,0.58,rejected -> human agent
+m3_sbert_lr,wrong intent,Why is a money transfer not showing?,pending_transfer,transfer_not_received_by_recipient,0.4038,0.58,rejected -> human agent
+m3_sbert_lr,out-of-scope,can you colorize a black and white photo,oos,receiving_money,0.11479999870061874,0.58,rejected -> human agent
+m3_sbert_lr,out-of-scope,accept incoming phone call,oos,request_refund,0.22259999811649323,0.58,rejected -> human agent
+m3_sbert_lr,out-of-scope,what do i put on my feet,oos,receiving_money,0.07850000262260437,0.58,rejected -> human agent
+m3_sbert_lr,out-of-scope,"do a job search on monstercom for jobs in the tech field in arlington, va",oos,apple_pay_or_google_pay,0.28279998898506165,0.58,rejected -> human agent
+m3_sbert_lr,out-of-scope,can you check how many miles i walked today when i was out get the info from my phone,oos,lost_or_stolen_phone,0.2694999873638153,0.58,rejected -> human agent

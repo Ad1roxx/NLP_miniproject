@@ -1,0 +1,16 @@
+# Versions recorded from the working venv (Python 3.11.9, Windows 11).
+# torch was installed with CUDA 12.6 wheels:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu126
+# On a CPU-only machine plain `pip install torch` is fine (DistilBERT is then skipped).
+accelerate==1.15.0
+joblib==1.6.0
+matplotlib==3.11.2
+numpy==2.4.6
+pandas==3.0.6
+requests==2.34.2
+scikit-learn==1.9.1
+seaborn==0.13.2
+sentence-transformers==6.1.0
+streamlit==1.64.0
+torch==2.14.0
+transformers==5.17.0

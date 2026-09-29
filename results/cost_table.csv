@@ -1,0 +1,5 @@
+model,name,median_latency_ms_cpu_batch1,size_on_disk_mb,train_seconds,train_device,note,latency_hardware
+m1_tfidf_lr,M1 TF-IDF + LogReg,1.41,22.9,16.65,CPU,,"CPU: AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD (16 threads)"
+m2_tfidf_svm,M2 TF-IDF + LinearSVC,1.41,22.9,4.55,CPU,,"CPU: AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD (16 threads)"
+m3_sbert_lr,M3 MiniLM + LogReg,9.33,91.7,0.96,CPU,classifier fit only; frozen MiniLM encoding of all splits took 12.84s on cuda:0,"CPU: AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD (16 threads)"
+m4_distilbert,M4 DistilBERT (fine-tuned),16.93,268.8,187.32,GPU (NVIDIA GeForce RTX 4060 Laptop GPU),fine-tuning on NVIDIA GeForce RTX 4060 Laptop GPU; latency is still measured on CPU,"CPU: AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD (16 threads)"

@@ -1,0 +1,23 @@
+{
+  "selection": "argmax over tau of mean(in-scope acc with rejection, OOS recall) on BANKING77 val + CLINC oos_val; test never used",
+  "models": {
+    "m1_tfidf_lr": {
+      "tau": 0.49,
+      "val_in_scope_acc_with_rejection": 0.8581,
+      "val_oos_recall": 0.94,
+      "val_balanced_score": 0.8991
+    },
+    "m3_sbert_lr": {
+      "tau": 0.58,
+      "val_in_scope_acc_with_rejection": 0.8701,
+      "val_oos_recall": 0.95,
+      "val_balanced_score": 0.9101
+    },
+    "m4_distilbert": {
+      "tau": 0.97,
+      "val_in_scope_acc_with_rejection": 0.8651,
+      "val_oos_recall": 0.95,
+      "val_balanced_score": 0.9076
+    }
+  }
+}

@@ -1,0 +1,11 @@
+model,text,true,pred,confidence,top2,top2_prob
+m3_sbert_lr,how many transactions can i make with a disposable card,get_disposable_virtual_card,disposable_card_limits,0.9904,top_up_limits,0.0037
+m3_sbert_lr,Where do I find the exchange rate?,exchange_charge,exchange_rate,0.9726,exchange_charge,0.0085
+m3_sbert_lr,My transfer is pending.,balance_not_updated_after_bank_transfer,pending_transfer,0.9702,transfer_not_received_by_recipient,0.0061
+m3_sbert_lr,What can I use a virtual disposable card for?,disposable_card_limits,get_disposable_virtual_card,0.9685,disposable_card_limits,0.0269
+m3_sbert_lr,Where can I view my PIN?,pin_blocked,get_physical_card,0.9617,pin_blocked,0.0173
+m3_sbert_lr,What other methods are there to verify my identity?,why_verify_identity,verify_my_identity,0.9554,unable_to_verify_identity,0.0209
+m3_sbert_lr,"I was double charged, and the second charge is showing as ""pending"". How long will it be before I get my money back once the second charge has been refunded?",pending_card_payment,transaction_charged_twice,0.9373,Refund_not_showing_up,0.0313
+m3_sbert_lr,What do i need to verify my id?,unable_to_verify_identity,verify_my_identity,0.9162,unable_to_verify_identity,0.0619
+m3_sbert_lr,"I would like to know why my payment is still pending, can you help?",pending_transfer,pending_card_payment,0.9116,pending_transfer,0.0505
+m3_sbert_lr,My card is just not working at this time.,virtual_card_not_working,card_not_working,0.908,declined_card_payment,0.0235

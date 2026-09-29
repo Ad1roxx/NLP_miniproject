@@ -1,0 +1,33 @@
+%% F3 - Experiment pipeline. All four branches ran (DistilBERT on an RTX 4060 GPU).
+flowchart TD
+    D["<b>Data</b><br/>BANKING77 (13,083 queries, 77 intents)<br/>+ CLINC150 out-of-scope queries"]
+    S["<b>Split</b><br/>train 9,002 / val 1,001 (stratified, seed 42)<br/>official test 3,080 untouched<br/>OOS: val 100 / test 1,000"]
+    P["<b>Light preprocessing</b><br/>lowercase, &lt;num&gt;, &lt;cur&gt;<br/>stop words kept"]
+    T["<b>Sparse lexical</b><br/>TF-IDF word 1-2 + char 2-5 grams"]
+    M1["M1 Logistic Regression"]
+    M2["M2 LinearSVC"]
+    E["<b>Dense semantic</b><br/>MiniLM-L6-v2 sentence vectors (frozen)"]
+    M3["M3 Logistic Regression"]
+    B["<b>Transformer</b><br/>DistilBERT fine-tuned (GPU)"]
+    M4["M4 softmax over 77 intents"]
+    EV["<b>Shared in-scope evaluation</b><br/>accuracy, macro-F1, per-class F1, confused pairs"]
+    G["<b>OOS gate</b><br/>max probability &ge; tau<br/>tau chosen on validation only"]
+    F["<b>Figures + results files</b><br/>report and slides"]
+    A["<b>Streamlit demo</b><br/>saved models, no retraining"]
+    D --> S
+    S --> P --> T
+    T --> M1
+    T --> M2
+    S -- raw text --> E --> M3
+    S -- raw text --> B --> M4
+    M1 --> EV
+    M2 --> EV
+    M3 --> EV
+    M4 --> EV
+    EV --> G
+    G --> F
+    G --> A
+    classDef gate fill:#e3edfb,stroke:#2a78d6,stroke-width:2px,color:#0b0b0b
+    classDef box fill:#ffffff,stroke:#9a9993,color:#0b0b0b
+    class D,S,P,T,M1,M2,E,M3,B,M4,EV,F,A box
+    class G gate

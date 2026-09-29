@@ -1,0 +1,19 @@
+{
+  "model": "m1_tfidf_lr",
+  "chosen_C": 10,
+  "val_macro_f1": 0.9216,
+  "train_seconds": 16.65,
+  "grid": [
+    {
+      "C": 1,
+      "val_macro_f1": 0.9038,
+      "train_seconds": 11.05
+    },
+    {
+      "C": 10,
+      "val_macro_f1": 0.9216,
+      "train_seconds": 16.65
+    }
+  ],
+  "n_features": 35864
+}

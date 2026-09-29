@@ -1,0 +1,51 @@
+{
+  "test_set": "official BANKING77 test (3,080 queries, 77 intents)",
+  "weighted_f1_reported": false,
+  "weighted_f1_note": "test set is exactly balanced (40 per intent), so weighted-F1 equals macro-F1 and is omitted",
+  "rows": [
+    {
+      "model": "m1_tfidf_lr",
+      "name": "M1 TF-IDF + LogReg",
+      "accuracy": 0.913,
+      "macro_precision": 0.9164,
+      "macro_recall": 0.913,
+      "macro_f1": 0.9133,
+      "val_macro_f1": 0.9216,
+      "chosen_hyperparameter": 10,
+      "oos_gate": "yes"
+    },
+    {
+      "model": "m2_tfidf_svm",
+      "name": "M2 TF-IDF + LinearSVC",
+      "accuracy": 0.912,
+      "macro_precision": 0.9147,
+      "macro_recall": 0.912,
+      "macro_f1": 0.9122,
+      "val_macro_f1": 0.9187,
+      "chosen_hyperparameter": 1,
+      "oos_gate": "no (no probabilities)"
+    },
+    {
+      "model": "m3_sbert_lr",
+      "name": "M3 MiniLM + LogReg",
+      "accuracy": 0.9269,
+      "macro_precision": 0.9303,
+      "macro_recall": 0.9269,
+      "macro_f1": 0.9267,
+      "val_macro_f1": 0.9325,
+      "chosen_hyperparameter": 10,
+      "oos_gate": "yes"
+    },
+    {
+      "model": "m4_distilbert",
+      "name": "M4 DistilBERT (fine-tuned)",
+      "accuracy": 0.9266,
+      "macro_precision": 0.9292,
+      "macro_recall": 0.9266,
+      "macro_f1": 0.9266,
+      "val_macro_f1": 0.9232,
+      "chosen_hyperparameter": 9,
+      "oos_gate": "yes"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "model": "m2_tfidf_svm",
+  "median_latency_ms_cpu_batch1": 1.41,
+  "n_queries": 200,
+  "batch_size": 1,
+  "device": "cpu",
+  "hardware": "CPU: AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD (16 threads); GPU: NVIDIA GeForce RTX 4060 Laptop GPU"
+}

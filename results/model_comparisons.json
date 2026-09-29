@@ -1,0 +1,26 @@
+[
+  {
+    "comparison": "classifier (TF-IDF fixed): LinearSVC vs LogReg",
+    "model": "m2_tfidf_svm",
+    "baseline": "m1_tfidf_lr",
+    "macro_f1_model": 0.9122,
+    "macro_f1_baseline": 0.9133,
+    "macro_f1_difference": -0.0011
+  },
+  {
+    "comparison": "representation (LogReg fixed): MiniLM vs TF-IDF",
+    "model": "m3_sbert_lr",
+    "baseline": "m1_tfidf_lr",
+    "macro_f1_model": 0.9267,
+    "macro_f1_baseline": 0.9133,
+    "macro_f1_difference": 0.0134
+  },
+  {
+    "comparison": "fine-tuning: DistilBERT vs frozen MiniLM + LogReg",
+    "model": "m4_distilbert",
+    "baseline": "m3_sbert_lr",
+    "macro_f1_model": 0.9266,
+    "macro_f1_baseline": 0.9267,
+    "macro_f1_difference": -0.0001
+  }
+]

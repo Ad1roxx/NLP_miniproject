@@ -1,0 +1,5 @@
+model,name,accuracy,macro_precision,macro_recall,macro_f1,val_macro_f1,chosen_hyperparameter,oos_gate
+m1_tfidf_lr,M1 TF-IDF + LogReg,0.913,0.9164,0.913,0.9133,0.9216,10,yes
+m2_tfidf_svm,M2 TF-IDF + LinearSVC,0.912,0.9147,0.912,0.9122,0.9187,1,no (no probabilities)
+m3_sbert_lr,M3 MiniLM + LogReg,0.9269,0.9303,0.9269,0.9267,0.9325,10,yes
+m4_distilbert,M4 DistilBERT (fine-tuned),0.9266,0.9292,0.9266,0.9266,0.9232,9,yes

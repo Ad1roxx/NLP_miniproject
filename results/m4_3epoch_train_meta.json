@@ -1,0 +1,38 @@
+{
+  "model": "m4_distilbert",
+  "base_model": "distilbert-base-uncased",
+  "chosen_epoch": 3,
+  "val_macro_f1": 0.9079,
+  "train_seconds": 49.99,
+  "train_device": "GPU (NVIDIA GeForce RTX 4060 Laptop GPU)",
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "val_macro_f1": 0.715,
+      "val_accuracy": 0.7712
+    },
+    {
+      "epoch": 2,
+      "val_macro_f1": 0.8724,
+      "val_accuracy": 0.8811
+    },
+    {
+      "epoch": 3,
+      "val_macro_f1": 0.9079,
+      "val_accuracy": 0.9051
+    }
+  ],
+  "settings": {
+    "max_length": 64,
+    "epochs": 3,
+    "lr": 5e-05,
+    "batch": 32,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "fp16": true,
+    "seed": 42,
+    "warmup_arg_used": "warmup_steps",
+    "transformers_version": "5.17.0"
+  },
+  "train_note": "fine-tuning on NVIDIA GeForce RTX 4060 Laptop GPU; latency is still measured on CPU"
+}

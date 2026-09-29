@@ -1,0 +1,59 @@
+{
+  "note": "Initial DistilBERT run: fixed 3 epochs (undertrained; validation macro-F1 still rising). Superseded by the early-stopping run.",
+  "results_table": {
+    "model": "m4_distilbert",
+    "name": "M4 DistilBERT (fine-tuned)",
+    "accuracy": 0.9032,
+    "macro_precision": 0.9089,
+    "macro_recall": 0.9032,
+    "macro_f1": 0.9029,
+    "val_macro_f1": 0.9079,
+    "chosen_hyperparameter": 3,
+    "oos_gate": "yes"
+  },
+  "cost_table": {
+    "model": "m4_distilbert",
+    "name": "M4 DistilBERT (fine-tuned)",
+    "median_latency_ms_cpu_batch1": 17.63,
+    "size_on_disk_mb": 268.8,
+    "train_seconds": 49.99,
+    "train_device": "GPU (NVIDIA GeForce RTX 4060 Laptop GPU)",
+    "note": "fine-tuning on NVIDIA GeForce RTX 4060 Laptop GPU; latency is still measured on CPU",
+    "latency_hardware": "CPU: AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD (16 threads)"
+  },
+  "oos_results": {
+    "model": "m4_distilbert",
+    "name": "M4 DistilBERT (fine-tuned)",
+    "tau": 0.39,
+    "oos_recall": 0.888,
+    "oos_precision": 0.79,
+    "oos_f1": 0.8362,
+    "in_scope_acc_with_rejection": 0.862,
+    "in_scope_acc_no_gate": 0.9032,
+    "gate_cost_acc_points": 4.1,
+    "false_rejection_rate": 0.0766,
+    "share_in_scope_errors_caught": 0.0354,
+    "share_in_scope_correct_rejected": 0.0412,
+    "accuracy_78_class": 0.8684,
+    "auroc": 0.9701,
+    "n_in_scope": 3080,
+    "n_oos": 1000,
+    "oos_precision_note": "OOS precision depends on the test mix (1000 OOS : 3080 in-scope); a different mix gives a different precision"
+  },
+  "thresholds": {
+    "tau": 0.39,
+    "val_in_scope_acc_with_rejection": 0.8801,
+    "val_oos_recall": 0.91,
+    "val_balanced_score": 0.8951
+  },
+  "error_summary": {
+    "tau": 0.39,
+    "n_test_errors": 298,
+    "errors_below_tau": 109,
+    "share_of_errors_caught_by_gate": 0.3658,
+    "errors_with_conf_over_0.9": 3,
+    "median_conf_of_errors": 0.4636,
+    "median_conf_of_correct": 0.8712,
+    "correct_rejected_by_gate": 126
+  }
+}

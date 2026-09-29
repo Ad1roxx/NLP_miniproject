@@ -1,0 +1,8 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+# trained models, caches and checkpoints (large; regenerate with `python run_all.py`)
+models/
+# raw downloads (re-downloaded automatically by src/data.py)
+data/raw/

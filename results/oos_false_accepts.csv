@@ -1,0 +1,31 @@
+model,text,routed_to_intent,confidence
+m1_tfidf_lr,i need to update my address,edit_personal_details,0.9962
+m1_tfidf_lr,"add mary to my phone plan, please",lost_or_stolen_phone,0.9717
+m1_tfidf_lr,what battery percentage is my phone at,lost_or_stolen_phone,0.9397
+m1_tfidf_lr,is there a way to change your houses address,edit_personal_details,0.9338
+m1_tfidf_lr,can a polar bear live in alabama,country_support,0.9071
+m1_tfidf_lr,can i deposit a check,top_up_by_cash_or_cheque,0.906
+m1_tfidf_lr,read the phone number for mom in my phone contacts,lost_or_stolen_phone,0.8845
+m1_tfidf_lr,delete the contact uncle john from my phone,lost_or_stolen_phone,0.8798
+m1_tfidf_lr,how long do i have to wait to get my refund,Refund_not_showing_up,0.858
+m1_tfidf_lr,can you auto-pilot the car,automatic_top_up,0.8559
+m3_sbert_lr,what time do i need to arrive to make it on time,card_delivery_estimate,0.9894000291824341
+m3_sbert_lr,i need to update my address,edit_personal_details,0.9854999780654907
+m3_sbert_lr,is there a way to change your houses address,edit_personal_details,0.9768000245094299
+m3_sbert_lr,what other countries speak the english language,country_support,0.9708999991416931
+m3_sbert_lr,does my carrier have coverage in europe,country_support,0.9624000191688538
+m3_sbert_lr,can you look at what the oldest age is someone can enlist in the army,age_limit,0.9476000070571899
+m3_sbert_lr,download all the photos off my phone into the cloud,lost_or_stolen_phone,0.9417999982833862
+m3_sbert_lr,send information on flood clean up to my phone,lost_or_stolen_phone,0.9253000020980835
+m3_sbert_lr,request a refund on the car wax i bought yesterday,request_refund,0.92330002784729
+m3_sbert_lr,tell me where to go to get my son enrolled in public kindergarten,age_limit,0.9139999747276306
+m4_distilbert,i need to update my address,edit_personal_details,0.9991999864578247
+m4_distilbert,how long do i have to wait to get my refund,Refund_not_showing_up,0.9991999864578247
+m4_distilbert,is there a way to change your houses address,edit_personal_details,0.9991000294685364
+m4_distilbert,how much data does my phone have left this month,lost_or_stolen_phone,0.9990000128746033
+m4_distilbert,can i deposit a check,top_up_by_cash_or_cheque,0.9983999729156494
+m4_distilbert,what time do i need to arrive to make it on time,card_delivery_estimate,0.9980999827384949
+m4_distilbert,can you look at what the oldest age is someone can enlist in the army,age_limit,0.9980000257492065
+m4_distilbert,what's the cost to have a business card printed,order_physical_card,0.9968000054359436
+m4_distilbert,what other countries speak the english language,country_support,0.9966999888420105
+m4_distilbert,tell me where to go to get my son enrolled in public kindergarten,age_limit,0.996399998664856

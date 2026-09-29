@@ -1,0 +1,88 @@
+{
+  "model": "m4_distilbert",
+  "base_model": "distilbert-base-uncased",
+  "chosen_epoch": 9,
+  "max_epochs": 20,
+  "early_stopping_patience": 3,
+  "epochs_run": 12,
+  "stopped_early": true,
+  "val_macro_f1": 0.9232,
+  "train_seconds": 187.32,
+  "train_device": "GPU (NVIDIA GeForce RTX 4060 Laptop GPU)",
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "val_macro_f1": 0.3957,
+      "val_accuracy": 0.4795
+    },
+    {
+      "epoch": 2,
+      "val_macro_f1": 0.8091,
+      "val_accuracy": 0.8422
+    },
+    {
+      "epoch": 3,
+      "val_macro_f1": 0.9114,
+      "val_accuracy": 0.9051
+    },
+    {
+      "epoch": 4,
+      "val_macro_f1": 0.9123,
+      "val_accuracy": 0.9071
+    },
+    {
+      "epoch": 5,
+      "val_macro_f1": 0.9091,
+      "val_accuracy": 0.9041
+    },
+    {
+      "epoch": 6,
+      "val_macro_f1": 0.9218,
+      "val_accuracy": 0.9171
+    },
+    {
+      "epoch": 7,
+      "val_macro_f1": 0.9173,
+      "val_accuracy": 0.9121
+    },
+    {
+      "epoch": 8,
+      "val_macro_f1": 0.9189,
+      "val_accuracy": 0.9151
+    },
+    {
+      "epoch": 9,
+      "val_macro_f1": 0.9232,
+      "val_accuracy": 0.9181
+    },
+    {
+      "epoch": 10,
+      "val_macro_f1": 0.9232,
+      "val_accuracy": 0.9181
+    },
+    {
+      "epoch": 11,
+      "val_macro_f1": 0.9232,
+      "val_accuracy": 0.9181
+    },
+    {
+      "epoch": 12,
+      "val_macro_f1": 0.9208,
+      "val_accuracy": 0.9171
+    }
+  ],
+  "settings": {
+    "max_length": 64,
+    "max_epochs": 20,
+    "patience": 3,
+    "lr": 5e-05,
+    "batch": 32,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "fp16": true,
+    "seed": 42,
+    "warmup_arg_used": "warmup_steps",
+    "transformers_version": "5.17.0"
+  },
+  "train_note": "fine-tuning on NVIDIA GeForce RTX 4060 Laptop GPU; latency is still measured on CPU"
+}

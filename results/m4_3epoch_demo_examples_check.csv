@@ -1,0 +1,6 @@
+model,is_demo_default,tau,example_type,text,top_intent,confidence,decision,behaves_as_intended
+m4_distilbert,False,0.39,supported,I am still waiting on my card,card_arrival,0.8793,accepted,True
+m4_distilbert,False,0.39,supported,How do I change my PIN?,change_pin,0.9184,accepted,True
+m4_distilbert,False,0.39,tricky banking (from confused_pairs.csv),How long does a card delivery take?,card_delivery_estimate,0.6053,accepted,True
+m4_distilbert,False,0.39,out of scope,Book me a flight to Delhi,card_delivery_estimate,0.3739,rejected -> human agent,True
+m4_distilbert,False,0.39,out of scope,What's the weather tomorrow?,card_delivery_estimate,0.4455,accepted,False

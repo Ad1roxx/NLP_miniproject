@@ -1,0 +1,21 @@
+{
+  "model": "m3_sbert_lr",
+  "chosen_C": 10,
+  "val_macro_f1": 0.9325,
+  "train_seconds": 0.96,
+  "encode_all_splits_seconds": 12.84,
+  "encode_device": "cuda:0",
+  "grid": [
+    {
+      "C": 1,
+      "val_macro_f1": 0.9205,
+      "train_seconds": 0.61
+    },
+    {
+      "C": 10,
+      "val_macro_f1": 0.9325,
+      "train_seconds": 0.96
+    }
+  ],
+  "embedding_dim": 384
+}

@@ -1,0 +1,19 @@
+model,is_demo_default,tau,example_type,text,top_intent,confidence,expected_intent,intent_correct,decision,behaves_as_intended
+m1_tfidf_lr,False,0.49,supported,I am still waiting on my card,card_arrival,0.9126,card_arrival,True,accepted,True
+m1_tfidf_lr,False,0.49,supported,How do I change my PIN?,change_pin,0.9977,change_pin,True,accepted,True
+m1_tfidf_lr,False,0.49,supported,my new card still hasn't shown up,card_arrival,0.9665,card_arrival,True,accepted,True
+m1_tfidf_lr,False,0.49,tricky banking (from confused_pairs.csv),How long does a card delivery take?,card_delivery_estimate,0.9297,card_arrival,False,accepted,True
+m1_tfidf_lr,False,0.49,out of scope,Book me a flight to Delhi,card_delivery_estimate,0.1161,oos,,rejected -> human agent,True
+m1_tfidf_lr,False,0.49,out of scope,What's the weather tomorrow?,exchange_rate,0.0579,oos,,rejected -> human agent,True
+m3_sbert_lr,True,0.58,supported,I am still waiting on my card,card_arrival,0.6937,card_arrival,True,accepted,True
+m3_sbert_lr,True,0.58,supported,How do I change my PIN?,change_pin,0.9774,change_pin,True,accepted,True
+m3_sbert_lr,True,0.58,supported,my new card still hasn't shown up,card_arrival,0.4006,card_arrival,True,rejected -> human agent,False
+m3_sbert_lr,True,0.58,tricky banking (from confused_pairs.csv),How long does a card delivery take?,card_delivery_estimate,0.8942,card_arrival,False,accepted,True
+m3_sbert_lr,True,0.58,out of scope,Book me a flight to Delhi,card_delivery_estimate,0.2607,oos,,rejected -> human agent,True
+m3_sbert_lr,True,0.58,out of scope,What's the weather tomorrow?,card_delivery_estimate,0.1605,oos,,rejected -> human agent,True
+m4_distilbert,False,0.97,supported,I am still waiting on my card,card_arrival,0.9988,card_arrival,True,accepted,True
+m4_distilbert,False,0.97,supported,How do I change my PIN?,change_pin,0.9992,change_pin,True,accepted,True
+m4_distilbert,False,0.97,supported,my new card still hasn't shown up,card_arrival,0.9987,card_arrival,True,accepted,True
+m4_distilbert,False,0.97,tricky banking (from confused_pairs.csv),How long does a card delivery take?,card_delivery_estimate,0.9935,card_arrival,False,accepted,True
+m4_distilbert,False,0.97,out of scope,Book me a flight to Delhi,card_delivery_estimate,0.9478,oos,,rejected -> human agent,True
+m4_distilbert,False,0.97,out of scope,What's the weather tomorrow?,card_delivery_estimate,0.7443,oos,,rejected -> human agent,True

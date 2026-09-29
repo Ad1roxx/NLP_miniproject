@@ -1,0 +1,4 @@
+model,name,tau,oos_recall,oos_precision,oos_f1,in_scope_acc_with_rejection,in_scope_acc_no_gate,gate_cost_acc_points,false_rejection_rate,share_in_scope_errors_caught,share_in_scope_correct_rejected,accuracy_78_class,auroc,n_in_scope,n_oos,oos_precision_note
+m1_tfidf_lr,M1 TF-IDF + LogReg,0.49,0.943,0.7276,0.8214,0.8494,0.913,6.4,0.1146,0.051,0.0636,0.8723,0.9742,3080,1000,OOS precision depends on the test mix (1000 OOS : 3080 in-scope); a different mix gives a different precision
+m3_sbert_lr,M3 MiniLM + LogReg,0.58,0.925,0.7266,0.8139,0.8617,0.9269,6.5,0.113,0.0477,0.0653,0.8772,0.9692,3080,1000,OOS precision depends on the test mix (1000 OOS : 3080 in-scope); a different mix gives a different precision
+m4_distilbert,M4 DistilBERT (fine-tuned),0.97,0.955,0.7449,0.837,0.8662,0.9266,6.0,0.1062,0.0458,0.0604,0.888,0.9705,3080,1000,OOS precision depends on the test mix (1000 OOS : 3080 in-scope); a different mix gives a different precision

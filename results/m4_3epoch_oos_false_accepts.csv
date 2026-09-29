@@ -1,0 +1,11 @@
+model,text,routed_to_intent,confidence
+m4_distilbert,how long do i have to wait to get my refund,Refund_not_showing_up,0.9269999861717224
+m4_distilbert,i need to update my address,edit_personal_details,0.9246000051498412
+m4_distilbert,is there a way to change your houses address,edit_personal_details,0.9108999967575072
+m4_distilbert,can you look at what the oldest age is someone can enlist in the army,age_limit,0.8920999765396118
+m4_distilbert,can you auto-pilot the car,automatic_top_up,0.8919000029563904
+m4_distilbert,tell me what the hot topics are that are trending on google,apple_pay_or_google_pay,0.8765000104904175
+m4_distilbert,how much data does my phone have left this month,lost_or_stolen_phone,0.8745999932289124
+m4_distilbert,how much is auto febreeze on amazon,automatic_top_up,0.8550000190734863
+m4_distilbert,can you put the car in fuel efficient mode,automatic_top_up,0.8492000102996826
+m4_distilbert,what other countries speak the english language,country_support,0.8414999842643738

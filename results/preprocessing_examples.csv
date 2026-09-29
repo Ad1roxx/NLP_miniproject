@@ -1,0 +1,11 @@
+before,after,label
+The ATM only gave me 10 pounds when I withdrew 30. What do I do?,the atm only gave me <num> pounds when i withdrew <num> . what do i do?,wrong_amount_of_cash_received
+how much to get my card in 2 days?,how much to get my card in <num> days?,card_delivery_estimate
+Why was I charged an additional $1?,why was i charged an additional <cur> <num> ?,extra_charge_on_statement
+What happened! I asked for 30 pounds at your ATM and only go 10. The machine lied about it too. It said I received the full 30 pounds. Someone better help me asap on this.,what happened! i asked for <num> pounds at your atm and only go <num> . the machine lied about it too. it said i received the full <num> pounds. someone better help me asap on this.,wrong_amount_of_cash_received
+"How long does an international transfer take? I made the transfer from France 2 days ago, but it is not showing up in my bank yet.","how long does an international transfer take? i made the transfer from france <num> days ago, but it is not showing up in my bank yet.",balance_not_updated_after_bank_transfer
+"I just checked my statement and saw a $1 charge, why is it there?","i just checked my statement and saw a <cur> <num> charge, why is it there?",extra_charge_on_statement
+I still have not received an answer as to why I was charged $1.00 in a transaction?,i still have not received an answer as to why i was charged <cur> <num> in a transaction?,extra_charge_on_statement
+Are there any restrictions for the disposable cards that I need to be aware of?,are there any restrictions for the disposable cards that i need to be aware of?,disposable_card_limits
+Where do you deliver cards to?,where do you deliver cards to?,order_physical_card
+Why am I being charged to withdrawal money?,why am i being charged to withdrawal money?,cash_withdrawal_charge

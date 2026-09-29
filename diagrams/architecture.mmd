@@ -1,0 +1,16 @@
+%% F4 - System architecture of the deployed router (demo).
+flowchart LR
+    U["Customer query"] --> UI["Streamlit UI<br/>app/streamlit_app.py"]
+    UI --> PR["src/predict.py<br/>load saved model"]
+    PR --> M["Intent classifier<br/>(M1 / M3 / M4)<br/>77 intent probabilities"]
+    M --> G{"max probability<br/>&ge; tau ?"}
+    G -- "yes" --> W["Route to intent workflow<br/>e.g. card_arrival"]
+    G -- "no" --> H["Out of scope:<br/>hand off to human agent"]
+    classDef gate fill:#e3edfb,stroke:#2a78d6,stroke-width:2px,color:#0b0b0b
+    classDef ok fill:#e6f6ee,stroke:#1baf7a,color:#0b0b0b
+    classDef warn fill:#fdf3dc,stroke:#eda100,color:#0b0b0b
+    classDef box fill:#ffffff,stroke:#9a9993,color:#0b0b0b
+    class U,UI,PR,M box
+    class G gate
+    class W ok
+    class H warn

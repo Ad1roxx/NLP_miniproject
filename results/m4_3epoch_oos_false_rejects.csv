@@ -1,0 +1,11 @@
+model,text,true,pred,pred_correct,confidence
+m4_distilbert,I was retrieving money and my card wouldn't remove.,card_swallowed,card_not_working,False,0.0803999975323677
+m4_distilbert,"I am missing some funds from my account - I tried to transfer them using my credit card number, and it disappeared.",topping_up_by_card,compromised_card,False,0.1254999935626983
+m4_distilbert,I want to go back on what I did this morning,cancel_transfer,cancel_transfer,True,0.1272000074386596
+m4_distilbert,how do VR cards work,get_disposable_virtual_card,getting_virtual_card,False,0.1333000063896179
+m4_distilbert,Is a non-electronic card available as well,order_physical_card,card_linking,False,0.1508000046014785
+m4_distilbert,the conversion value for my card payments is incorrect.,card_payment_wrong_exchange_rate,reverted_card_payment?,False,0.1553999930620193
+m4_distilbert,Can I space out how often money is transferred along my travels?,automatic_top_up,transfer_timing,False,0.1554999947547912
+m4_distilbert,Can I change the amount I made on a payment that I made to the payment is correct.,cancel_transfer,request_refund,False,0.1560000032186508
+m4_distilbert,I transferred some money but the recipient is having trouble withdrawing.,transfer_not_received_by_recipient,failed_transfer,False,0.1607999950647354
+m4_distilbert,My contanctless has stopped working,contactless_not_working,card_not_working,False,0.1635999977588653

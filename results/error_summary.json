@@ -1,0 +1,35 @@
+{
+  "best_model": "m3_sbert_lr",
+  "per_model": {
+    "m1_tfidf_lr": {
+      "tau": 0.49,
+      "n_test_errors": 268,
+      "errors_below_tau": 157,
+      "share_of_errors_caught_by_gate": 0.5858,
+      "errors_with_conf_over_0.9": 9,
+      "median_conf_of_errors": 0.432,
+      "median_conf_of_correct": 0.9365,
+      "correct_rejected_by_gate": 196
+    },
+    "m3_sbert_lr": {
+      "tau": 0.58,
+      "n_test_errors": 225,
+      "errors_below_tau": 147,
+      "share_of_errors_caught_by_gate": 0.6533,
+      "errors_with_conf_over_0.9": 12,
+      "median_conf_of_errors": 0.4728,
+      "median_conf_of_correct": 0.9424,
+      "correct_rejected_by_gate": 201
+    },
+    "m4_distilbert": {
+      "tau": 0.97,
+      "n_test_errors": 226,
+      "errors_below_tau": 141,
+      "share_of_errors_caught_by_gate": 0.6239,
+      "errors_with_conf_over_0.9": 117,
+      "median_conf_of_errors": 0.9174,
+      "median_conf_of_correct": 0.9988,
+      "correct_rejected_by_gate": 186
+    }
+  }
+}
